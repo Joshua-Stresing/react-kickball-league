@@ -16,6 +16,7 @@ export default function PlayerDetails() {
     };
     fetchData();
   }, []);
+  
   return (
     <div className='PlayerDetails'>
       {error && <p>{error}</p>}

@@ -30,6 +30,7 @@ Setup fetch for teams and players
 make my fetch then make my view,
 do it for all 4 views,
 make the links in the lists to the details
+teams>teamdetails>players>playerdetails
 and then $$$$$$
 
 Views
