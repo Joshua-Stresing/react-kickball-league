@@ -2,18 +2,31 @@ import React, { useEffect, useState } from 'react';
 import { fetchPlayers } from '../../services/fetchPlayers';
 
 export default function Players() {
-  const [team, setTeam] = useState([]);
+  const [players, setPlayers] = useState([]);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchPlayers();
-      console.log(data);
-      setTeam(data);
+      try {
+        const data = await fetchPlayers();
+        console.log(data);
+        setPlayers(data);
+      } catch (error) {
+        setError(error.message);
+      }
     };
     fetchData();
   }, []);
     
   return (
-    <div>teams</div>
+    <div className='Players'>
+      <h1>Players</h1>
+      {error && <p>{error}</p>}
+      { players.map((player) => (
+        <div key={player.id}>
+          <p>{player.name}</p>
+        </div>
+      )) }
+    </div>
   );
 }
