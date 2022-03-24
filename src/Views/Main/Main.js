@@ -1,5 +1,10 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+ 
 
-export default function Home() {
-  return <div>Main</div>;
+export default function Main() {
+  return (
+    <div>
+    </div>
+  );
 }

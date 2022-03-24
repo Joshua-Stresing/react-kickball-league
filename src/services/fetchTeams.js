@@ -8,9 +8,9 @@ export async function fetchTeams() {
 export async function fetchTeamPlayersById(id) {
   const data = await client
     .from('teams')
-    .select('*')
-    .match({ team_id: id })
+    .select('*, players (*)')
+    .match({ id })
     .single();
-    
+
   return data.data;
 }

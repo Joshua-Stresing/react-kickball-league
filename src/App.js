@@ -5,6 +5,7 @@ import Teams from './Views/Teams/Teams';
 import Players from './Views/Players/Players';
 import TeamDetails from './Views/Teams/TeamDetails';
 import PlayerDetails from './Views/Players/PlayerDetails';
+import Header from './comps/Header';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <main className='Main'>
       <h1>KickBall</h1>
       <BrowserRouter>
+        <Header></Header>
         <Switch>
           <Route exact path = "/">
             <Home />

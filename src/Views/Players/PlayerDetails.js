@@ -10,13 +10,13 @@ export default function PlayerDetails() {
 //   const params = useParams();
   const { id } = useParams();
 
-  console.log(id);
+//   console.log(id);
   
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchPlayerById(id);
-        console.log(data); 
+        // console.log(data); 
         setPlayers(data);
 
       } catch (error) {
