@@ -9,7 +9,6 @@ export default function Players() {
     const fetchData = async () => {
       try {
         const data = await fetchPlayers();
-        console.log(data);
         setPlayers(data);
       } catch (error) {
         setError(error.message);
