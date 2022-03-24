@@ -6,7 +6,7 @@ import Players from './Views/Players/Players';
 function App() {
   return (
     <div className="App">
-      <Teams />
+      <Players />
     </div>
   );
 }
