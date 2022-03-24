@@ -5,7 +5,7 @@ import { fetchPlayerById } from '../../services/fetchPlayers';
 
 
 export default function PlayerDetails() {
-  const [players, setPlayers] = useState({});
+  const [players, setPlayers] = useState({ teams: [] });
   const [error, setError] = useState('');
 //   const params = useParams();
   const { id } = useParams();
@@ -18,6 +18,7 @@ export default function PlayerDetails() {
         const data = await fetchPlayerById(id);
         console.log(data); 
         setPlayers(data);
+
       } catch (error) {
         setError(error.message);
       }
@@ -32,15 +33,8 @@ export default function PlayerDetails() {
       <div key={players.id}>
         <h1>{players.name}</h1>
         <p>Position: {players.position}</p>
-        {players.team.map((team) => (
-            <li key={team.id}>
-                <Link {team.name}
-            </li>
-        ))}
-        <p>Team: {players.team_id}</p>
-        
+        <p>Team: <Link to={`/teams/${players.teams.id}`}> {players.teams.name} </Link></p>       
       </div>
-      )
     </div>
   );
 }

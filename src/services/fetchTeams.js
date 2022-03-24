@@ -11,5 +11,6 @@ export async function fetchTeamPlayersById(id) {
     .select('*')
     .match({ team_id: id })
     .single();
+    
   return data.data;
 }
