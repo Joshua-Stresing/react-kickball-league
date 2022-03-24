@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { fetchPlayers } from '../../services/fetchPlayers';
+
 
 export default function Players() {
   const [players, setPlayers] = useState([]);
@@ -23,7 +25,11 @@ export default function Players() {
       {error && <p>{error}</p>}
       { players.map((player) => (
         <div key={player.id}>
-          <p>{player.name}</p>
+          <div key={player.id}>
+            <Link to = {`players/${player.id}`}>
+              <h3>{player.name}</h3>
+            </Link>
+          </div>
         </div>
       )) }
     </div>

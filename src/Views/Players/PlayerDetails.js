@@ -1,33 +1,46 @@
 import React, { useEffect, useState } from 'react';
-import { fetchPlayers } from '../../services/fetchPlayers';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { fetchPlayerById } from '../../services/fetchPlayers';
+
 
 export default function PlayerDetails() {
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState({});
   const [error, setError] = useState('');
+//   const params = useParams();
+  const { id } = useParams();
 
+  console.log(id);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchPlayers();
+        const data = await fetchPlayerById(id);
+        console.log(data); 
         setPlayers(data);
       } catch (error) {
         setError(error.message);
       }
     };
     fetchData();
-  }, []);
-  
+  }, [id]);
+
   return (
     <div className='PlayerDetails'>
       {error && <p>{error}</p>}
-      { players.map((player) => (
-        <div key={player.id}>
-          <h1>{player.name}</h1>
-          <p>{player.position}</p>
-          <p>{player.team_id}</p>
-        </div>
-      ))}
+     
+      <div key={players.id}>
+        <h1>{players.name}</h1>
+        <p>Position: {players.position}</p>
+        {players.team.map((team) => (
+            <li key={team.id}>
+                <Link {team.name}
+            </li>
+        ))}
+        <p>Team: {players.team_id}</p>
+        
+      </div>
+      )
     </div>
   );
 }
-

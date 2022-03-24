@@ -42,4 +42,3 @@ Players List
 A page that lists all players in the league.
 Player Detail
 A page that shows the details for a single player, such as their name and position.
-

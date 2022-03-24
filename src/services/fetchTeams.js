@@ -5,7 +5,7 @@ export async function fetchTeams() {
   return data.data;
 }
 
-export async function fetchTeamsById(id) {
+export async function fetchTeamPlayersById(id) {
   const data = await client
     .from('teams')
     .select('*')
