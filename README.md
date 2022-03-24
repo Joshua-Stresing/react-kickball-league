@@ -23,3 +23,22 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+
+Setup fetch for teams and players
+
+make my fetch then make my view,
+do it for all 4 views,
+make the links in the lists to the details
+teams>teamdetails>players>playerdetails
+and then $$$$$$
+
+Views
+Teams List
+A page that lists all the teams in the league.
+Team Detail
+A page that shows the details for a single team, such as their name and logo, and players.
+Players List
+A page that lists all players in the league.
+Player Detail
+A page that shows the details for a single player, such as their name and position.
